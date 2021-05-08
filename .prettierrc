@@ -1,0 +1,12 @@
+  {
+    "singleQuote": true,
+    "trailingComma": "all",
+    "printWidth": 100,
+    "extends": ["prettier"],
+    "plugins": ["prettier"],
+    "rules": {
+      "prettier/prettier": "off",
+      "arrow-body-style": "off",
+      "prefer-arrow-callback": "off"
+    }
+  }
