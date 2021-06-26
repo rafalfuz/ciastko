@@ -1,4 +1,5 @@
 import React from 'react';
+import {Provider} from 'react-redux';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import GlobalStyles from './ThemeFolder/GlobalStyles';
 import Navbar from './Components/Navbar/Navbar';
@@ -9,12 +10,13 @@ import Smacznie from './Pages/Smacznie/Smacznie'
 import Kolorowo from './Pages/Kolorowo/Kolorowo'
 import DetailsCard from './Pages/Smacznie/DetailsCard';
 import {Routes} from './routes/index'
+import store from './store/index'
 
 
 class Root extends React.Component {
   render() {
     return (
-    <>
+    <Provider store={store}>
     <Router>
     <GlobalStyles /> 
     <Navbar />
@@ -29,7 +31,7 @@ class Root extends React.Component {
     </Router>
 
     <div>Footer</div>
-    </>
+    </Provider>
     )
   }
 }

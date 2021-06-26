@@ -4,5 +4,5 @@ export const Routes = {
     lekko: '/lekko',
     smacznie: '/smacznie',
     smacznieViewport: '/smacznie/:id',
-    kolorowo: '/kolorowo'
+    kolorowo: '/kolorowo',
 }

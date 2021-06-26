@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
 import styled from 'styled-components';
-import {Cakes} from './DataCakes'
 import Card from './Card'
 
 
@@ -33,14 +34,34 @@ const StyledCardsWrapper = styled.section`
 `
 
 
-const Smacznie = () => (  
+const Smacznie = ({cakes}) => (  
     <StyledSmacznieWrapper>
         <StyledTitle>Spełniamy słodkie marzenia!</StyledTitle>
         <StyledDescription>Dostosowujemy się do potrzeb klientów. Jesteś alegrikiem, cukrzykiem, sportowcem, a może jesteś na diecie albo po prostu zdrowo się odżywiasz? Niezależnie kim jesteś bądź co robisz, u Nas zawsze znajdziesz coś dla siebie!</StyledDescription>
         <StyledCardsWrapper>
-        {Cakes.map((cake)=><Card {...cake} key={cake.id} />)}
+        {cakes.map((cake)=><Card {...cake} key={cake.id} />)}
     </StyledCardsWrapper>
     </StyledSmacznieWrapper>
 )
 
-export default Smacznie;
+const mapStateToProps = ({cakes}) => ({cakes})
+
+Smacznie.propTypes = {
+    cakes: PropTypes.arrayOf(
+        PropTypes.shape({
+            name: PropTypes.string.isRequired,
+            photo: PropTypes.string.isRequired,
+            prize: PropTypes.string.isRequired,
+            value: PropTypes.string.isRequired,
+            superInfo: PropTypes.string.isRequired,
+            suplementsFacts: PropTypes.string.isRequired,
+            description: PropTypes.string.isRequired,
+            backgroundColor: PropTypes.string.isRequired,
+        })
+    )
+}
+Smacznie.defaultProps = {
+    cakes: [],
+  };
+
+export default connect(mapStateToProps)(Smacznie);

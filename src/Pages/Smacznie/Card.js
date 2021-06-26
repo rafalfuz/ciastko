@@ -88,7 +88,7 @@ class Card extends React.Component{
             return <Redirect to={`smacznie/${cake.id}`} />
         }
         return(
-    <StyledCardWrapper bgColor={cake.backgroundColor} onClick={()=>this.handleViewportCard}>
+    <StyledCardWrapper bgColor={cake.backgroundColor} onClick={this.handleViewportCard}>
         <SuperInfo superInfo={cake.superInfo}>
             {cake.superInfo ? `${cake.superInfo}` : ''}
         </SuperInfo>
