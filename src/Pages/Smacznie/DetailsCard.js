@@ -16,17 +16,16 @@ const DetailsCard = ( {activeCakeProps} ) => (
         suplementsFacts={activeCakeProps.suplementsFacts}
         description={activeCakeProps.description}
         backgroundColor={activeCakeProps.backgroundColor}
+        nutritionalValue={activeCakeProps.nutritionalValue}
+        weight={activeCakeProps.weight}
     />
     
     </>
 )
-const mapStateToProps = (state, ownProps) => {
-    console.log(state, ownProps);
-  
-    return {
-        activeCakeProps: state.cakes.find(item => item.id === Number(ownProps.match.params.id))
-    };
-  };
+const mapStateToProps = (state, ownProps) => ({
+         activeCakeProps: state.cakes.find(item => item.id === Number(ownProps.match.params.id)) 
+})
+
 
 DetailsCard.propTypes = {
     activeCakeProps: PropTypes.arrayOf().isRequired
