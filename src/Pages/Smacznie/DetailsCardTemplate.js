@@ -23,6 +23,12 @@ const StyledDetailsCardWrapper = styled.section`
     width: 80%;
     margin: 0 auto;
     border-radius: 25px;
+    @media screen and (max-width: 960px){
+        height: auto;
+        max-height: auto;
+        width: 90%;
+    }
+    
 `
 const StyledHeader = styled.header`
     border-top-left-radius: 25px;
@@ -78,6 +84,12 @@ const StyledCardContent = styled.div`
     justify-content: center;
     align-items: center;
     padding: 2rem;
+    flex-wrap: wrap;
+    @media screen and (max-width: 960px){
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 0;
+    }
 `
 const StyledPhotoWrapper = styled.div`
     display: flex;
@@ -85,7 +97,10 @@ const StyledPhotoWrapper = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
+    height: 90%;
+    @media screen and (max-width: 960px){
+        align-items: flex-start;
+    }
 `
 
 const SweetPhoto = styled.img`
@@ -95,6 +110,10 @@ const SweetPhoto = styled.img`
     max-height: 95%;
     background-color: transparent;
     border-radius: 5px;
+    @media screen and (max-width: 960px){
+        width: 100%;
+        max-width: 100%;
+    }
 `
 
 const StyledDetails = styled.div`
@@ -106,8 +125,51 @@ const StyledDetails = styled.div`
     justify-content: center;
     align-items: center;
     color: cornsilk;
+    @media screen and (max-width: 960px){
+        flex-basis: 100%;
+        justify-content: flex-start;
+        align-items: flex-start;
+        height: auto;
+    }
 `
-
+const StyledDescription = styled.p`
+    font-size: 1.6rem;
+    padding: 1.6rem;
+`
+const StyledWeight = styled.p`
+    font-size: 1.6rem;
+    padding: 1.2rem;
+`
+const StyledPrize = styled.p`
+    font-size: 2.2rem;
+    padding: 1.2rem;
+    color: tomato;
+`
+const StyledMacronutrients = styled.p`
+    font-weight: bold;
+    font-size: 1.6rem;
+`
+const StyledMacronutrientsInfo = styled.p`
+    font-size: 1.6rem;
+    padding: .3rem;
+`
+const StyledSuplements = styled.div`
+    color: cornsilk;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 90%;
+    flex-wrap: wrap;
+`
+const StyledSuplementsHeader = styled.p`
+    font-size: 1.6rem;
+    font-weight: bold;
+    flex-basis: 100%;
+`
+const StyledSuplementsInfo = styled.p`
+    font-size: 1.6rem;
+    flex-basis: 90%;
+`
 const DetailsCardTemplate = ({name, photo, prize, value, suplementsFacts, description, nutritionalValue, weight,backgroundColor}) => (
     <StyledBackgroundTexture>
     <StyledDetailsCardWrapper>
@@ -122,24 +184,21 @@ const DetailsCardTemplate = ({name, photo, prize, value, suplementsFacts, descri
         <StyledCardContent>
             <StyledPhotoWrapper><SweetPhoto src={photo}/></StyledPhotoWrapper>
             <StyledDetails>
-                <h4>Opis:</h4>
-                <p>{description}</p>
-                <br/><br/>
-                <h4>Cena: {prize} / {value}</h4>
-                <br/>
-                <h4>Waga: {weight} g</h4>
-                <br/>
-                <h4>Skład:</h4>
-                <p>{suplementsFacts}</p>
-                <br/>
-                <h4>Wartość odżywcza produktu:</h4>
-                <p>W {nutritionalValue.grammage} gramach:</p>
-                <p>Energia: {nutritionalValue.energy.kJ} kJ / {nutritionalValue.energy.kcal} kcal </p>
-                <p>Tłuszcz: {nutritionalValue.fat} g, w tym kwasy tłuszczowe nasycone: {nutritionalValue.includingSaturatedSattyAcids} g</p>
-                <p>Węglowodany: {nutritionalValue.carbohydrates} g, w tym cukry {nutritionalValue.includingSugars} g</p>
-                <p>Białko: {nutritionalValue.protein}</p>
-                <p>Sól: {nutritionalValue.salt}</p>
+                <StyledDescription>{description}</StyledDescription>
+                <StyledWeight>Waga: {weight} g</StyledWeight>
+                <StyledPrize>Cena: {prize} {value}</StyledPrize>
+                <StyledMacronutrients>Wartość odżywcza produktu:</StyledMacronutrients>
+                <StyledMacronutrientsInfo>W {nutritionalValue.grammage} gramach:</StyledMacronutrientsInfo>
+                <StyledMacronutrientsInfo>Energia: {nutritionalValue.energy.kJ} kJ / {nutritionalValue.energy.kcal} kcal </StyledMacronutrientsInfo>
+                <StyledMacronutrientsInfo>Tłuszcz: {nutritionalValue.fat} g, w tym kwasy tłuszczowe nasycone: {nutritionalValue.includingSaturatedSattyAcids} g</StyledMacronutrientsInfo>
+                <StyledMacronutrientsInfo>Węglowodany: {nutritionalValue.carbohydrates} g, w tym cukry {nutritionalValue.includingSugars} g</StyledMacronutrientsInfo>
+                <StyledMacronutrientsInfo>Białko: {nutritionalValue.protein}</StyledMacronutrientsInfo>
+                <StyledMacronutrientsInfo>Sól: {nutritionalValue.salt}</StyledMacronutrientsInfo>
             </StyledDetails>
+            <StyledSuplements>
+                <StyledSuplementsHeader>Skład:</StyledSuplementsHeader>
+                <StyledSuplementsInfo>{suplementsFacts}</StyledSuplementsInfo>
+        </StyledSuplements>
         </StyledCardContent>
     </StyledDetailsCardWrapper>
     </StyledBackgroundTexture> 

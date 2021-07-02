@@ -9,8 +9,8 @@ const initialState = {
          value: 'zł/szt',
          weight: '100',
          superInfo: 'Nowość',
-         suplementsFacts: 'soda oczyszczona, masło, cukier trzcinowy, szpachla gładzi gipsowej białej CEKOL-F16, jaja, imbir marynowany',
-         description: 'Produkt wykonany jest z prostokątnej stalowej blachy, wzdłuż której po obu stronach powycinane są prostokątne kierownice poodginane na przemian w dół i w górę. W zależności od ilości kierownic znajdujących się w zawirowywaczu i kąta ich zagięcia zależeć będzie stopień wykorzystania ciepła, które wraz ze spalinami uchodzić będzie z kotła do komina.',
+         suplementsFacts: 'grab, jesion, buk, jabłoń, grusza lub śliwa',
+         description: 'Drewno do palenia w kominku powinno być sezonowane od roku do nawet 3 lat w zależności od gatunku. Wówczas jego wilgotność spada do 15-20%.',
          nutritionalValue: {
             grammage: 100,
             energy:{
@@ -57,8 +57,8 @@ const initialState = {
             value: 'zł/szt',
             weight: '300',
             superInfo: 'Promocja',
-            suplementsFacts: 'soda oczyszczona, masło, cukier trzcinowy, szpachla gładzi gipsowej białej CEKOL-F16, jaja, imbir marynowany',
-            description: 'Produkt wykonany jest z prostokątnej stalowej blachy, wzdłuż której po obu stronach powycinane są prostokątne kierownice poodginane na przemian w dół i w górę. W zależności od ilości kierownic znajdujących się w zawirowywaczu i kąta ich zagięcia zależeć będzie stopień wykorzystania ciepła, które wraz ze spalinami uchodzić będzie z kotła do komina.',
+            suplementsFacts: 'Bulbasaur, Ivysaur, Venusaur, Charmander, Charmeleon, Charizard, Squirtle, Wartortle, Blastoise, Caterpie, Metapod, Butterfree, Weedle, Kakuna, Beedrill, Pidgey, Pidgeotto, Pidgeot, Rattata, Raticate',
+            description: 'Konstrukcja sprzęgła opiera się na tarczy i zamocowanej na niej okładzinie ciernej. Często posiada ono także tłumiki drgań skrętnych. Ale to właśnie okładzina cierna kompensuje różnice prędkości obrotowych wału napędowego i wałka skrzyni w momencie zmiany biegu. Przenosząc moment obrotowy, okładzina ulega ścieraniu. Gdy jej grubość jest już zbyt mała, sprzęgło przestaje właściwie pracować i zaczyna się ślizgać, a to rodzi konkretne problemy. Sprzęgło nie mogłoby jednak odpowiednio działać bez współpracujących z nim podzespołów, takich jak docisk sprzęgła, który niweluje objawy stopniowego zużywa się okładzin sprzęgła, wysprzęglik i łożysko oporowe (często zintegrowane z wysprzęglikiem).',
             nutritionalValue: {
                 grammage: 300,
                 energy:{
