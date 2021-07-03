@@ -1,9 +1,9 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components';
-import {IoMdArrowRoundBack} from 'react-icons/io'
+import { IoMdArrowRoundBack } from 'react-icons/io'
 import PropTypes from 'prop-types';
-import {Routes} from '../../routes/index'
+import { Routes } from '../../routes/index'
 
 const StyledBackgroundTexture = styled.div`
     background: rgb(238,174,202);
@@ -17,7 +17,8 @@ const StyledDetailsCardWrapper = styled.section`
     align-items: center;
     flex-direction: column;
     height: 80vh;
-    max-height: 80vh;
+    min-height: 80vh;
+    max-height: 100vh;
     background: rgb(55,188,228);
     background: linear-gradient(90deg, rgba(55,188,228,1) 0%, rgba(163,170,225,1) 50%, rgba(231,159,197,1) 100%);
     width: 80%;
@@ -25,7 +26,7 @@ const StyledDetailsCardWrapper = styled.section`
     border-radius: 25px;
     @media screen and (max-width: 960px){
         height: auto;
-        max-height: auto;
+        max-height: 100%;
         width: 90%;
     }
     
@@ -39,7 +40,7 @@ const StyledHeader = styled.header`
     align-items: center;
     justify-content: flex-start;  
     flex-basis: 10%;
-    background-color: ${({backgroundColor})=>backgroundColor};
+    background-color: ${({ backgroundColor }) => backgroundColor};
 `
 
 const StyledBackArrow = styled.div`
@@ -97,7 +98,7 @@ const StyledPhotoWrapper = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 90%;
+    height: 80%;
     @media screen and (max-width: 960px){
         align-items: flex-start;
     }
@@ -127,7 +128,6 @@ const StyledDetails = styled.div`
     color: cornsilk;
     @media screen and (max-width: 960px){
         flex-basis: 100%;
-        justify-content: flex-start;
         align-items: flex-start;
         height: auto;
     }
@@ -139,19 +139,28 @@ const StyledDescription = styled.p`
 const StyledWeight = styled.p`
     font-size: 1.6rem;
     padding: 1.2rem;
+    @media screen and (max-width: 960px){
+        align-self: flex-end;
+    }
 `
 const StyledPrize = styled.p`
     font-size: 2.2rem;
     padding: 1.2rem;
     color: tomato;
+    @media screen and (max-width: 960px){
+        align-self: center;
+    }
 `
 const StyledMacronutrients = styled.p`
     font-weight: bold;
     font-size: 1.6rem;
+    margin-left: 1.2rem;
+    color: ${({ textColor }) => textColor};
 `
 const StyledMacronutrientsInfo = styled.p`
     font-size: 1.6rem;
     padding: .3rem;
+    margin-left: 1.4rem;
 `
 const StyledSuplements = styled.div`
     color: cornsilk;
@@ -160,48 +169,53 @@ const StyledSuplements = styled.div`
     align-items: center;
     width: 90%;
     flex-wrap: wrap;
+    @media screen and (max-width: 960px){
+        margin: 1.6rem 0;
+        justify-content: center;
+    }
 `
 const StyledSuplementsHeader = styled.p`
     font-size: 1.6rem;
     font-weight: bold;
     flex-basis: 100%;
+    color: ${({ textColor }) => textColor};
 `
 const StyledSuplementsInfo = styled.p`
     font-size: 1.6rem;
     flex-basis: 90%;
 `
-const DetailsCardTemplate = ({name, photo, prize, value, suplementsFacts, description, nutritionalValue, weight,backgroundColor}) => (
+const DetailsCardTemplate = ({ name, photo, prize, value, suplementsFacts, description, nutritionalValue, weight, backgroundColor }) => (
     <StyledBackgroundTexture>
-    <StyledDetailsCardWrapper>
-        <StyledHeader backgroundColor={backgroundColor}>
-        <StyledBackArrow as={Link} to={Routes.smacznie}>
-        <BackButton />
-        </StyledBackArrow>
-            <StyledTitleWrapper>
-                <StyledTitle>{name}</StyledTitle>
-            </StyledTitleWrapper>
-        </StyledHeader>
-        <StyledCardContent>
-            <StyledPhotoWrapper><SweetPhoto src={photo}/></StyledPhotoWrapper>
-            <StyledDetails>
-                <StyledDescription>{description}</StyledDescription>
-                <StyledWeight>Waga: {weight} g</StyledWeight>
-                <StyledPrize>Cena: {prize} {value}</StyledPrize>
-                <StyledMacronutrients>Wartość odżywcza produktu:</StyledMacronutrients>
-                <StyledMacronutrientsInfo>W {nutritionalValue.grammage} gramach:</StyledMacronutrientsInfo>
-                <StyledMacronutrientsInfo>Energia: {nutritionalValue.energy.kJ} kJ / {nutritionalValue.energy.kcal} kcal </StyledMacronutrientsInfo>
-                <StyledMacronutrientsInfo>Tłuszcz: {nutritionalValue.fat} g, w tym kwasy tłuszczowe nasycone: {nutritionalValue.includingSaturatedSattyAcids} g</StyledMacronutrientsInfo>
-                <StyledMacronutrientsInfo>Węglowodany: {nutritionalValue.carbohydrates} g, w tym cukry {nutritionalValue.includingSugars} g</StyledMacronutrientsInfo>
-                <StyledMacronutrientsInfo>Białko: {nutritionalValue.protein}</StyledMacronutrientsInfo>
-                <StyledMacronutrientsInfo>Sól: {nutritionalValue.salt}</StyledMacronutrientsInfo>
-            </StyledDetails>
-            <StyledSuplements>
-                <StyledSuplementsHeader>Skład:</StyledSuplementsHeader>
-                <StyledSuplementsInfo>{suplementsFacts}</StyledSuplementsInfo>
-        </StyledSuplements>
-        </StyledCardContent>
-    </StyledDetailsCardWrapper>
-    </StyledBackgroundTexture> 
+        <StyledDetailsCardWrapper>
+            <StyledHeader backgroundColor={backgroundColor}>
+                <StyledBackArrow as={Link} to={Routes.smacznie}>
+                    <BackButton />
+                </StyledBackArrow>
+                <StyledTitleWrapper>
+                    <StyledTitle>{name}</StyledTitle>
+                </StyledTitleWrapper>
+            </StyledHeader>
+            <StyledCardContent>
+                <StyledPhotoWrapper><SweetPhoto src={photo} /></StyledPhotoWrapper>
+                <StyledDetails>
+                    <StyledDescription>{description}</StyledDescription>
+                    <StyledWeight>Waga: {weight} g</StyledWeight>
+                    <StyledPrize>Cena: {prize} {value}</StyledPrize>
+                    <StyledMacronutrients textColor={backgroundColor}>Wartość odżywcza produktu:</StyledMacronutrients>
+                    <StyledMacronutrientsInfo>W {nutritionalValue.grammage} gramach:</StyledMacronutrientsInfo>
+                    <StyledMacronutrientsInfo>Energia: {nutritionalValue.energy.kJ} kJ / {nutritionalValue.energy.kcal} kcal </StyledMacronutrientsInfo>
+                    <StyledMacronutrientsInfo>Tłuszcz: {nutritionalValue.fat} g, w tym kwasy tłuszczowe nasycone: {nutritionalValue.includingSaturatedSattyAcids} g</StyledMacronutrientsInfo>
+                    <StyledMacronutrientsInfo>Węglowodany: {nutritionalValue.carbohydrates} g, w tym cukry {nutritionalValue.includingSugars} g</StyledMacronutrientsInfo>
+                    <StyledMacronutrientsInfo>Białko: {nutritionalValue.protein}</StyledMacronutrientsInfo>
+                    <StyledMacronutrientsInfo>Sól: {nutritionalValue.salt}</StyledMacronutrientsInfo>
+                </StyledDetails>
+                <StyledSuplements>
+                    <StyledSuplementsHeader textColor={backgroundColor}>Skład:</StyledSuplementsHeader>
+                    <StyledSuplementsInfo>{suplementsFacts}</StyledSuplementsInfo>
+                </StyledSuplements>
+            </StyledCardContent>
+        </StyledDetailsCardWrapper>
+    </StyledBackgroundTexture>
 )
 
 DetailsCardTemplate.propTypes = {
