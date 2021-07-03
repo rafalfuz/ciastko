@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.js": "/ciastko/static/js/main.edc8bbed.chunk.js",
+    "main.js.map": "/ciastko/static/js/main.edc8bbed.chunk.js.map",
+    "runtime-main.js": "/ciastko/static/js/runtime-main.d0ecbca4.js",
+    "runtime-main.js.map": "/ciastko/static/js/runtime-main.d0ecbca4.js.map",
+    "static/js/2.427344d1.chunk.js": "/ciastko/static/js/2.427344d1.chunk.js",
+    "static/js/2.427344d1.chunk.js.map": "/ciastko/static/js/2.427344d1.chunk.js.map",
+    "index.html": "/ciastko/index.html",
+    "static/js/2.427344d1.chunk.js.LICENSE.txt": "/ciastko/static/js/2.427344d1.chunk.js.LICENSE.txt",
+    "static/media/Biscuits.16523ca6.jpg": "/ciastko/static/media/Biscuits.16523ca6.jpg",
+    "static/media/LogoLekkieCiacho.b240eef9.jpg": "/ciastko/static/media/LogoLekkieCiacho.b240eef9.jpg",
+    "static/media/cupCake.d98ec466.png": "/ciastko/static/media/cupCake.d98ec466.png",
+    "static/media/defaultCookie.bbf83659.jpg": "/ciastko/static/media/defaultCookie.bbf83659.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d0ecbca4.js",
+    "static/js/2.427344d1.chunk.js",
+    "static/js/main.edc8bbed.chunk.js"
+  ]
+}
