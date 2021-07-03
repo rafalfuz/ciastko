@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import {Redirect} from 'react-router-dom'
-import PropTypes from 'prop-types'
-import Biscuit from '../../Assets/Biscuits.jpg'
+import indispositionPhoto from '../../Assets/defaultCookie.jpg'
 
 
 const StyledCardWrapper = styled.div`
@@ -93,32 +92,13 @@ class Card extends React.Component{
             {cake.superInfo ? `${cake.superInfo}` : ''}
         </SuperInfo>
         <PhotoWrapper>
-            {cake.photo ? <CakePhoto src={cake.photo}/> : <CakePhoto src={Biscuit}/>}
+            {cake.photo ? <CakePhoto src={cake.photo}/> : <CakePhoto src={indispositionPhoto}/>}
         </PhotoWrapper>
         <CakeName>{cake.name}</CakeName>
         <Prize>{cake.prize} {cake.value}</Prize>
     </StyledCardWrapper>
         )
     }
-}
-
-
-Card.propTypes = {
-    name: PropTypes.string,
-    prize: PropTypes.string,
-    backgroundColor: PropTypes.oneOf(['#37bce4','#a3aae1','#e79fc5','#9BB7D4',]),
-    superInfo: PropTypes.string,
-    photo: PropTypes.string,
-    value: PropTypes.string
-}
-
-Card.defaultProps = {
-    name: 'Biszkopt',
-    prize: 'zero',
-    backgroundColor: '#9BB7D4',
-    superInfo: null,
-    photo: null,
-    value: 'szt.'
 }
 
 export default Card;

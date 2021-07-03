@@ -17,6 +17,8 @@ const StyledHomeWrapper = styled.section`
     color: cornsilk;
     @media (max-width: 960px){
         flex-direction: column-reverse;
+        height: 100%;
+        padding-bottom: 2rem;
     }
 `
 const StyledTitleWrapper = styled.div`
@@ -47,14 +49,16 @@ const StyledImage = styled.img`
     height: 100%;
     @media (max-width: 960px){
         width: 70%;
-        height: 90%;
+        height: 70%;
     }
 `
 const Home = ({title, color,}) => (
     <StyledHomeWrapper color={color}>
         <StyledTitleWrapper>
             <h1>{title}</h1>
-            <Button primary facebookBtn>Odwiedź Nas na Facebooku</Button>
+            <a href='https://pl-pl.facebook.com/lekkieciacho'><Button primary facebookBtn>Odwiedź Nas na Facebooku</Button></a>
+            <br/>
+            <a href='https://www.instagram.com'><Button primary instagramBtn>Odwiedź Nas na Instagramie</Button></a>
         </StyledTitleWrapper>
         <StyledImageWrapper>
         <StyledImage src={Cake} alt='Ciacho'/>

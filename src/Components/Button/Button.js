@@ -18,21 +18,32 @@ const Button = styled.button`
     }
 
     @media screen and (max-width: 960px){
-        width: 100%;
+        width: 90%;
     }
 
     ${({facebookBtn})=>facebookBtn && css `
         background-color: #4267B2;
-        color: white;
+        color: #ffffff;
         height: 64px;
         font-weight: 600;
+        transition: all .4s ease;
         &:hover{
             background-color: #fff;
             color: #4267B2; 
         }
     `}
+    ${({instagramBtn})=>instagramBtn && css `
+        background-color: #f05161;
+        color: #ffffff;
+        height: 64px;
+        font-weight: 600;
+        transition: all .4s ease;
+        &:hover{
+            background-color: #fff;
+            color: #f05161; 
+        }
+    `}
 `
-
 
 
 export default Button

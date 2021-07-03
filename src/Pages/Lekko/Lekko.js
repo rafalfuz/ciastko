@@ -12,8 +12,8 @@ const StyledLekkoWrapper = styled.section`
 
 const Lekko = () => (
     <StyledLekkoWrapper>
-    <h1>Lekko</h1>
-    <p>Lekko</p>
+    <h1>Lekko</h1> 
+    <p>-[W BUDOWIE...]-</p>
     </StyledLekkoWrapper>
 )
  

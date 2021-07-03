@@ -30,7 +30,7 @@ class Root extends React.Component {
     </Switch>
     </Router>
 
-    <div>Footer</div>
+    <div>Footer -[W BUDOWIE...]</div>
     </Provider>
     )
   }

@@ -12,7 +12,7 @@ const StyledZdrowoWrapper = styled.section`
 const Zdrowo = () => (
     <StyledZdrowoWrapper>
         <h1>Zdrowo</h1>
-        <p>Zdrowiej</p>
+        <p>-[W BUDOWIE...]-</p>
     </StyledZdrowoWrapper>
 )
  
