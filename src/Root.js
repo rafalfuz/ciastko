@@ -21,16 +21,16 @@ class Root extends React.Component {
     <GlobalStyles /> 
     <Navbar />
     <Switch>
-    <Route path={Routes.home} component={Home} />
-    <Route path={Routes.zdrowo} component={Lekko} />
-    <Route path={Routes.lekko} component={Zdrowo} />
+    <Route exact path={Routes.home} component={Home} />
+    <Route path={Routes.zdrowo} component={Zdrowo} />
+    <Route path={Routes.lekko} component={Lekko} />
     <Route path={Routes.smacznieViewport} component={DetailsCard} />
     <Route path={Routes.smacznie} component={Smacznie} />
     <Route path={Routes.kolorowo} component={Kolorowo} />
     </Switch>
     </Router>
 
-    <div>Footer -[W BUDOWIE..]</div>
+    <div>Footer -[W BUDOWIE....]</div>
     </Provider>
     )
   }
