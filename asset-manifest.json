@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/ciastko/static/js/main.b9bc665f.chunk.js",
-    "main.js.map": "/ciastko/static/js/main.b9bc665f.chunk.js.map",
+    "main.js": "/ciastko/static/js/main.22642a57.chunk.js",
+    "main.js.map": "/ciastko/static/js/main.22642a57.chunk.js.map",
     "runtime-main.js": "/ciastko/static/js/runtime-main.d0ecbca4.js",
     "runtime-main.js.map": "/ciastko/static/js/runtime-main.d0ecbca4.js.map",
     "static/js/2.427344d1.chunk.js": "/ciastko/static/js/2.427344d1.chunk.js",
@@ -16,6 +16,6 @@
   "entrypoints": [
     "static/js/runtime-main.d0ecbca4.js",
     "static/js/2.427344d1.chunk.js",
-    "static/js/main.b9bc665f.chunk.js"
+    "static/js/main.22642a57.chunk.js"
   ]
 }
