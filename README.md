@@ -6,5 +6,5 @@ prop-types
 react-icons
 react-router-dom
 styled-components
-react-redux
+react-redux (experimentally as part of learning)
 
