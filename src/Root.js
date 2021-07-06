@@ -19,7 +19,7 @@ class Root extends React.Component {
     <Provider store={store}>
     <Router>
     <GlobalStyles /> 
-    <Navbar />
+    <Navbar/>
     <Switch>
     <Route exact path={Routes.home} component={Home} />
     <Route path={Routes.zdrowo} component={Zdrowo} />

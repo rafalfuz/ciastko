@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import {Link, NavLink} from 'react-router-dom'
 import {GiStairsCake} from 'react-icons/gi'
 import {MdMenu, MdClose} from 'react-icons/md'
@@ -9,7 +9,11 @@ const StyledNavbarWrapper = styled.nav`
     background: rgb(55,188,228);
     background: linear-gradient(90deg, rgb(55, 188, 228) 0%, rgba(163,170,225,1) 50%, rgba(231,159,197,1) 100%);
     height: 80px;
-    display: flex;
+    display: flex;  
+    ${props => props.mobileNavActive && css`
+        position: fixed;
+        width: 100vw;
+    `}
 `
 
 const StyledNavbar = styled.ul`
@@ -61,12 +65,13 @@ const StyledNavMenu = styled.ul`
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 90vh;
-        position: absolute;
+        height: calc(100vh - 80px);
+        position: fixed;
         top: 80px;
         left: ${({mobile})=>mobile ? 0 : '-100%'};
         background-color:  #ffcff1;
         transition: all .5s ease;
+        overflow: hidden;
         }
     `
 const StyledItem = styled.li`
@@ -123,14 +128,15 @@ class Navbar extends React.Component {
         const {mobileActive} = this.state
 
         return(
-            <StyledNavbarWrapper>
+            <StyledNavbarWrapper mobileNavActive={mobileActive && true}>
                 <StyledNavbar>
-                    <StyledNavLogo  to='/' onClick={this.removeMenuMobile}>
+                    <StyledNavLogo  to='/ciastko' onClick={this.removeMenuMobile}>
                         Lekkie<StyledCorpName>ci<StyledIcon />cho</StyledCorpName>
                     </StyledNavLogo>
         
                     <MobileIcon onClick={()=>this.handleMobileActive({mobileActive})}>{mobileActive ? <MdClose/> : <MdMenu/>}</MobileIcon>
-                    {mobileActive ? <StyledNavMenu mobile>
+                    {mobileActive ? 
+                                <StyledNavMenu mobile>
                             <StyledItem mobile onClick={this.removeMenuMobile}><StyledNavLink as={NavLink} to ='/zdrowo'>Zdrowo</StyledNavLink></StyledItem>
                             <StyledItem mobile onClick={this.removeMenuMobile}><StyledNavLink as={NavLink} to ='/lekko'>Lekko</StyledNavLink></StyledItem>
                             <StyledItem mobile onClick={this.removeMenuMobile}><StyledNavLink as={NavLink} to ='/smacznie'>Smacznie</StyledNavLink></StyledItem>

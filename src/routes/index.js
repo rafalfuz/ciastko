@@ -1,5 +1,5 @@
 export const Routes = {
-    home: '/',
+    home: '/ciastko',
     zdrowo: '/zdrowo',
     lekko: '/lekko',
     smacznie: '/smacznie',
